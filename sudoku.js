@@ -9,30 +9,13 @@ function read() {
 }
 const one = read();
 
-// function randomBoardEasy() {
-//   return Math.floor(Math.random() * 6);
-// }
-
-
-//Никита
 
 function solve(arr) {
   let randomArr = arr[randomBoardEasy()];
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции read.
-   * Возвращает игровое поле после попытки его решить.
-   */
   return randomArr;
 }
-const flex = solve(one);
-// console.log(solve(read()));
 
-// function solve(arr) {
-//   let randomArr = arr[randomBoardEasy()];
-//   return randomArr;
-// }
-const flex = one[0];
-// const flex = solve(one);
+const flex = one[6];
 
 
 function sort(randomArr) {
@@ -44,9 +27,6 @@ function sort(randomArr) {
   return arr;
 }
 const sorts = sort(flex);
-
-
-console.log(sorts);
 
 
 function solveFin(array) {
@@ -71,7 +51,7 @@ function solveFin(array) {
 }
 
 const final = solveFin(sorts)
-//Диана
+
 function isSolved() {
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
@@ -81,16 +61,11 @@ function isSolved() {
 }
 isSolved(solveFin(sorts));
 
-//Гриша
+
 function prettyBoard() {
   console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
   console.table(final)
   console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции solve.
-   * Выводит в консоль/терминал судоку.
-   * Подумай, как симпатичнее его вывести.
-   */
 }
 
 
@@ -99,7 +74,6 @@ module.exports = {
   isSolved,
   sort,
   solve,
-  randomBoardEasy,
   read,
   solveFin,
 }
