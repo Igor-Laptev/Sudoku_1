@@ -1,5 +1,7 @@
-const fs = require('fs');
-const { EOL } = require('os');
+
+const fs = require("fs");
+const { EOL, endianness } = require("os");
+const chalk = require('chalk'); 
 
 function read() {
   const text = fs.readFileSync('./puzzles.txt', 'utf-8').trim().split(`${EOL}`);
@@ -11,12 +13,27 @@ const one = read();
 //   return Math.floor(Math.random() * 6);
 // }
 
+
+//Никита
+
+function solve(arr) {
+  let randomArr = arr[randomBoardEasy()];
+  /**
+   * Принимает игровое поле в том формате, в котором его вернули из функции read.
+   * Возвращает игровое поле после попытки его решить.
+   */
+  return randomArr;
+}
+const flex = solve(one);
+// console.log(solve(read()));
+
 // function solve(arr) {
 //   let randomArr = arr[randomBoardEasy()];
 //   return randomArr;
 // }
 const flex = one[0];
 // const flex = solve(one);
+
 
 function sort(randomArr) {
   let arr = [];
@@ -27,6 +44,10 @@ function sort(randomArr) {
   return arr;
 }
 const sorts = sort(flex);
+
+
+console.log(sorts);
+
 
 function solveFin(array) {
   for (let r = 0; r < 9; r++) {
@@ -48,8 +69,8 @@ function solveFin(array) {
   }
   return array;
 }
-console.table(solveFin(sorts));
 
+const final = solveFin(sorts)
 //Диана
 function isSolved() {
   /**
@@ -62,9 +83,23 @@ isSolved(solveFin(sorts));
 
 //Гриша
 function prettyBoard() {
+  console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
+  console.table(final)
+  console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
    * Выводит в консоль/терминал судоку.
    * Подумай, как симпатичнее его вывести.
    */
+}
+
+
+module.exports = {
+  prettyBoard,
+  isSolved,
+  sort,
+  solve,
+  randomBoardEasy,
+  read,
+  solveFin,
 }
