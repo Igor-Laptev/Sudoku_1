@@ -1,5 +1,8 @@
 const fs = require("fs");
 const { EOL } = require("os");
+const chalk = require('chalk'); 
+
+
 
 function read() {
   const text = fs.readFileSync("./puzzles.txt", "utf-8").trim().split(`${EOL}`);
@@ -34,6 +37,7 @@ function sort(randomArr) {
   return arr;
 }
 const sorts = sort(flex);
+
 console.log(sorts);
 
 /**
@@ -51,9 +55,22 @@ function isSolved() {
 
 //Гриша
 function prettyBoard() {
+  console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
+  console.table(sorts)
+  console.log(chalk.red('   🚨🚨🚨!!!WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨WARNING!!!🚨🚨🚨'))
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
    * Выводит в консоль/терминал судоку.
    * Подумай, как симпатичнее его вывести.
    */
+}
+
+
+module.exports = {
+  prettyBoard,
+  isSolved,
+  sort,
+  solve,
+  randomBoardEasy,
+  read,
 }
