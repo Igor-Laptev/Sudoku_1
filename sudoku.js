@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { EOL } = require("os");
+const { EOL, endianness } = require("os");
 const chalk = require('chalk'); 
 
 
@@ -16,6 +16,7 @@ function randomBoardEasy() {
 }
 
 //Никита
+endianness
 function solve(arr) {
   let randomArr = arr[randomBoardEasy()];
   /**
