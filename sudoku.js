@@ -1,26 +1,3 @@
-
-const fs = require('fs');
-const { EOL } = require('os');
-
-function read() {
-  const text = fs.readFileSync('./puzzles.txt', 'utf-8').trim().split(`${EOL}`);
-  return text.map((el) => el.split(''));
-}
-
-function randomBoardEasy() {
-  return Math.floor(Math.random() * 6);
-}
-
-function solve(arr) {
-  let randomArr = arr[randomBoardEasy()];
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции read.
-   * Возвращает игровое поле после попытки его решить.
-   */
-}
-console.log(solve(read()));
-
-const { log } = require("console");
 const fs = require("fs");
 const { EOL } = require("os");
 
@@ -29,23 +6,47 @@ function read() {
   return text.map((el) => el.split(""));
 }
 
+const one = read();
+
+function randomBoardEasy() {
+  return Math.floor(Math.random() * 6);
+}
+
 //Никита
-function solve() {
+function solve(arr) {
+  let randomArr = arr[randomBoardEasy()];
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции read.
    * Возвращает игровое поле после попытки его решить.
    */
+  return randomArr;
 }
+const flex = solve(one);
+// console.log(solve(read()));
+
+//greg nikita igor' diana
+function sort(randomArr) {
+  let arr = [];
+  for (let i = 0; i < randomArr.length; i += 9) {
+    let n = randomArr.slice(i, i + 9);
+    arr.push(n);
+  }
+  return arr;
+}
+const sorts = sort(flex);
+console.log(sorts);
+
+/**
+ * Принимает игровое поле в том формате, в котором его вернули из функции read.
+ * Возвращает игровое поле после попытки его решить.
+ */
 
 //Диана
-
 function isSolved() {
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции solve.
    * Возвращает булевое значение — решено это игровое поле или нет.
    */
-
-
 }
 
 //Гриша
@@ -55,19 +56,4 @@ function prettyBoard() {
    * Выводит в консоль/терминал судоку.
    * Подумай, как симпатичнее его вывести.
    */
-
 }
-
-
-//Гриша
-function prettyBoard() {
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции solve.
-   * Выводит в консоль/терминал судоку.
-   * Подумай, как симпатичнее его вывести.
-   */
-}
-
-
-const prettyBoard()
-
