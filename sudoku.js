@@ -5,8 +5,7 @@ function read() {
   const text = fs.readFileSync("./puzzles.txt", "utf-8").trim().split(`${EOL}`);
   return text.map((el) => el.split(""));
 }
-const text2 = read();
-console.log(text2);
+
 function solve() {
   /**
    * Принимает игровое поле в том формате, в котором его вернули из функции read.
