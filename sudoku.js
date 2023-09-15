@@ -31,3 +31,9 @@ function prettyBoard() {
    * Подумай, как симпатичнее его вывести.
    */
 }
+
+
+//Гриша
+function prettyBoard() {
+}
+const prettyBoard()
